@@ -11,7 +11,7 @@ var handleTheClick = function(event){
 
   // 'this' refers to the XHR object 'req'
   req.addEventListener("load", function(){
-    thisLink.innerText = "Response received!"
+    thisLink.innerText = this.response;
   });
 
   req.send();
