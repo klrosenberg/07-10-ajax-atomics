@@ -2,12 +2,16 @@
 var myLink = document.getElementById("clicker");
 
 var handleTheClick = function(event){
+  var thisLink = this;
+  
   var req = new XMLHttpRequest();
   
-  req.open("get", this.getAttribute("href"));
+  // 'this' refers to the link being clicked
+  req.open("get", thisLink.getAttribute("href"));
 
+  // 'this' refers to the XHR object 'req'
   req.addEventListener("load", function(){
-    alert(this.response);
+    thisLink.innerText = "Response received!"
   });
 
   req.send();
