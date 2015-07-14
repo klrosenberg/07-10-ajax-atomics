@@ -8,7 +8,7 @@ req.addEventListener("loadstart", function(){
 });
 
 req.addEventListener("load", function(){
-  alert("Yes");
+  alert(this.response);
 });
 
 req.send();
